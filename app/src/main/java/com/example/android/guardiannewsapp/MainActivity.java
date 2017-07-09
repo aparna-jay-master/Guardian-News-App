@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
      * URL for book data from the Google API
      */
     private String GUARDIAN_API =
-            "http://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test";
+            "https://content.guardianapis.com/search?q=&from-date=2014-01-01&api-key=test";
     /**
      * Adapter for the list of books
      */
@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 String textQuery = editTextView.getText().toString();
                 String adjustedQuery = textQuery.replace(" ", "+");
                 //TODO update this link
-                GUARDIAN_API = "http://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test" + adjustedQuery;
+                GUARDIAN_API = "https://content.guardianapis.com/search?q=" + adjustedQuery
+                                + "&from-date=2014-01-01&api-key=test";
 
                 if (checkConnectivity()) {
                     //configure loader manager
