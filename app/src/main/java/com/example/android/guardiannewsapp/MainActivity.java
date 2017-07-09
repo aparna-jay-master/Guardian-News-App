@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +24,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>> {
 
     /**
-     * Constant value for the book loader ID.
+     * Constant value for the news loader ID.
      */
     private static final int NEWS_LOADER_ID = 1;
     /**
-     * URL for book data from the Google API
+     * URL for news data from the Google API
      */
     private String GUARDIAN_API =
             "https://content.guardianapis.com/search?q=&from-date=2017-01-01&api-key=test";
     /**
-     * Adapter for the list of books
+     * Adapter for the list of articles
      */
     private NewsAdapter mAdapter;
 
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                     LoaderManager loaderManager = getLoaderManager();
                     loaderManager.restartLoader(1, null, MainActivity.this);
                 } else {
+                    //set list as invisible
+                    View list = findViewById((R.id.list));
+                    list.setVisibility(View.GONE);
+                    //popup empty state
+                    mEmptyStateTextView.setVisibility(View.VISIBLE);
                     mEmptyStateTextView.setText(R.string.no_internet_connection);
                 }
                 return false;
@@ -94,11 +100,17 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
                 Uri articleUri = Uri.parse(currentArticle.getWebUrl());
 
-                // Create a new intent to view the earthquake URI
-                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, articleUri);
-
-                // Send the intent to launch a new activity
-                startActivity(websiteIntent);
+                // check for internet
+                if (checkConnectivity()) {
+                    // Create a new intent to view the news URI
+                    Intent websiteIntent = new Intent(Intent.ACTION_VIEW, articleUri);
+                    // Send the intent to launch a new activity
+                    startActivity(websiteIntent);
+                } else {
+                    Toast noInternetPopUP = Toast.makeText(getApplicationContext(), "Unable to retrieve article. \n" +
+                            "Please check your network settings.", Toast.LENGTH_SHORT);
+                    noInternetPopUP.show();
+                }
             }
         });
 
@@ -143,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         // Set empty state text to display "No articles found."
         mEmptyStateTextView.setText(R.string.no_news);
 
-        // Clear the adapter of previous book data
+        // Clear the adapter of previous news data
         mAdapter.clear();
 
         // If there is a valid list of {@link News}s, then add them to the adapter's
@@ -181,10 +193,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
             // First, hide loading indicator and list so error message will be visible
             View loadingIndicator = findViewById(R.id.loading_indicator);
             loadingIndicator.setVisibility(View.GONE);
-            View list = findViewById((R.id.list));
-            list.setVisibility(View.GONE);
-            //make list visible
-            mEmptyStateTextView.setVisibility(View.VISIBLE);
             return false;
         }
     }

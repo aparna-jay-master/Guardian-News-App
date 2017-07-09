@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#9E9E9E</color>
     <color name="colorPrimaryDark">#424242</color>
-    <color name="colorAccent">#F44336</color>
-    <!-- Color for an earthquake with magnitude 0 and 2 -->
+    <color name="colorAccent">#E53935</color>
+
+    <!-- Section color for Politics -->
     <color name="politicsColor">#4A7BA7</color>
 
     <!-- Section color for Education -->
