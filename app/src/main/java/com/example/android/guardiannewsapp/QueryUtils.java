@@ -53,7 +53,7 @@ public final class QueryUtils {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        // Extract relevant fields from the JSON response and create a list of {@link Book}s
+        // Extract relevant fields from the JSON response and create a list of {@link News}s
         List<News> news = extractFeatureFromJson(jsonResponse);
 
         // Return the list of {@link News}s
@@ -164,7 +164,7 @@ public final class QueryUtils {
 
                 // For each article in the resultsArray, create an {@link News} object
                 // limit to 100 so that it doesn't time out
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < resultsArray.length(); i++) {
 
                     // Get a single article section at position i within the list of articles
                     JSONObject currentArticle = resultsArray.getJSONObject(i);
@@ -181,7 +181,7 @@ public final class QueryUtils {
                     // Create a new {@link News} object with the title, section and url
                     News singleArticle = new News(sectionName, articleTitle, articleUrl);
 
-                    // Add the new {@link News} to the list of books.
+                    // Add the new {@link News} to the list of articles.
                     newsArticles.add(singleArticle);
                 }
             }
@@ -190,10 +190,10 @@ public final class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the book JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the Guardian JSON results", e);
         }
 
-        // Return the list of books
+        // Return the list of articles
         return newsArticles;
     }
 }
