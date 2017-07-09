@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO implement url part
-
         // Find a reference to the {@link ListView} in the layout
         ListView newsListView = (ListView) findViewById(R.id.list);
 
@@ -64,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 //Find search text and create variable
                 String textQuery = editTextView.getText().toString();
                 String adjustedQuery = textQuery.replace(" ", "+");
-                //TODO update this link
                 GUARDIAN_API = "https://content.guardianapis.com/search?q=" + adjustedQuery
                         + "&from-date=2017-01-01&api-key=test";
 
