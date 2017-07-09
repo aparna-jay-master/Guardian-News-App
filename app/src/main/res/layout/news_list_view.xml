@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/list_block"
     android:layout_width="match_parent"
-    android:layout_height="88dp">
+    android:layout_height="104dp">
 
     <TextView
         android:id="@+id/article_name_text_view"
@@ -11,7 +11,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:text="This is the article name and it's really really really long and goes to a second line"
+        android:textSize="20sp"
+        android:text="This is the article name and it's really really really long"
         android:textStyle="bold" />
 
     <TextView
