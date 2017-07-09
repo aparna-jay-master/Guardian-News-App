@@ -3,4 +3,55 @@
     <color name="colorPrimary">#9E9E9E</color>
     <color name="colorPrimaryDark">#424242</color>
     <color name="colorAccent">#F44336</color>
+    <!-- Color for an earthquake with magnitude 0 and 2 -->
+    <color name="politicsColor">#4A7BA7</color>
+
+    <!-- Section color for Education -->
+    <color name="educationColor">#04B4B3</color>
+
+    <!-- Section color for UK News -->
+    <color name="UKNewsColor">#10CAC9</color>
+
+    <!-- Section color for Environment -->
+    <color name="environmentColor">#8BC34A</color>
+
+    <!-- Section color for Opinion -->
+    <color name="opinionColor">#FF7D50</color>
+
+    <!-- Section color for Sport -->
+    <color name="sportColor">#FFEB3B</color>
+
+    <!-- Section color for Law -->
+    <color name="lawColor">#E75F40</color>
+
+    <!-- Section color for News -->
+    <color name="newsColor">#E57373</color>
+
+    <!-- Section color for Science -->
+    <color name="scienceColor">#D93218</color>
+
+    <!-- Section color for Society -->
+    <color name="societyColor">#E91E63</color>
+
+    <!-- Section color for Australia News -->
+    <color name="ausiNewsColor">#CE93D8</color>
+
+    <!-- Section color for Music -->
+    <color name="musicColor">#B39DDB</color>
+
+    <!-- Section color for Arts and Design -->
+    <color name="artsColor">#66BB6A</color>
+
+    <!-- Section color for World News -->
+    <color name="worldColor">#FF80AB</color>
+
+    <!-- Section color for Stage -->
+    <color name="stageColor">#8C9EFF</color>
+
+    <!-- Section color for Technology -->
+    <color name="techColor">#D1C4E9</color>
+
+    <!-- Default section color -->
+    <color name="defaultColor">#E0E0E0</color>
+
 </resources>

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 String adjustedQuery = textQuery.replace(" ", "+");
                 //TODO update this link
                 GUARDIAN_API = "https://content.guardianapis.com/search?q=" + adjustedQuery
-                                + "&from-date=2017-01-01&api-key=test";
+                        + "&from-date=2017-01-01&api-key=test";
 
                 if (checkConnectivity()) {
                     //configure loader manager

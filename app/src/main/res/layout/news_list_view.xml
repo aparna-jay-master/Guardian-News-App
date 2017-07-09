@@ -11,8 +11,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
+        android:inputType="textMultiLine"
+        android:lines="2"
+        android:maxLines="2"
         android:text="This is the article name and it's really really really long"
+        android:textIsSelectable="false"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
@@ -22,7 +26,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
         android:text="Section" />
 
 </RelativeLayout>

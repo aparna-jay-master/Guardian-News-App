@@ -18,17 +18,18 @@ public class News {
 
     /**
      * Constructor a new {@link News} object
+     *
      * @param sectionName name of the section
      * @param articleName name of the article
-     * @param webUrl url to actual article
+     * @param webUrl      url to actual article
      */
-    public News (String sectionName, String articleName, String webUrl){
+    public News(String sectionName, String articleName, String webUrl) {
         mSectionName = sectionName;
         mArticleName = articleName;
         mWebUrl = webUrl;
     }
 
-    public String getSectionName(){
+    public String getSectionName() {
         return mSectionName;
     }
 
