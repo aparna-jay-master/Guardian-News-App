@@ -56,7 +56,7 @@ public final class QueryUtils {
         // Extract relevant fields from the JSON response and create a list of {@link Book}s
         List<News> news = extractFeatureFromJson(jsonResponse);
 
-        // Return the list of {@link Earthquake}s
+        // Return the list of {@link News}s
         return news;
     }
 
@@ -102,7 +102,7 @@ public final class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the Guardian JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -145,7 +145,7 @@ public final class QueryUtils {
             return null;
         }
 
-        // Create an empty ArrayList that we can start adding earthquakes to
+        // Create an empty ArrayList that we can start adding articles to
         List<News> newsArticles = new ArrayList<>();
 
         // Try to parse the JSON response string. If there's a problem with the way the JSON
@@ -163,8 +163,8 @@ public final class QueryUtils {
                 JSONArray resultsArray = responseObject.getJSONArray("results");
 
                 // For each article in the resultsArray, create an {@link News} object
-                //resultsArray.length() is 10 for now
-                for (int i = 0; i < 10; i++) {
+                // limit to 100 so that it doesn't time out
+                for (int i = 0; i < 100; i++) {
 
                     // Get a single article section at position i within the list of articles
                     JSONObject currentArticle = resultsArray.getJSONObject(i);

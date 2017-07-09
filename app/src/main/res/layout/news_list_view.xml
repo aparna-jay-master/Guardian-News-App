@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_block"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
-    android:id="@+id/list_block">
+    android:layout_height="88dp">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/article_name_text_view"
-    android:text="This is the article name and it's really really really long and goes to a second line"
-    android:textStyle="bold"
-    android:layout_marginLeft="16dp"
-    android:layout_marginTop="8dp"/>
+        android:id="@+id/article_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="This is the article name and it's really really really long and goes to a second line"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/section_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Section"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
-        android:id="@+id/section_text_view"/>
+        android:layout_marginRight="16dp"
+        android:text="Section" />
 
 </RelativeLayout>
